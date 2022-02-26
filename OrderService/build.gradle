@@ -1,0 +1,19 @@
+ext {
+    springCloudVersion = 'Hoxton.RELEASE'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.0'
+}
+
+tasks.register("prepareKotlinBuildScriptModel"){}

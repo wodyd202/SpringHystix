@@ -1,0 +1,3 @@
+rootProject.name = 'SpringHystrix'
+include 'OrderService'
+include 'ProductService'
