@@ -2,6 +2,7 @@ package com.orderservice.adapter;
 
 import com.orderservice.service.application.OrderService;
 import com.orderservice.service.application.PlaceOrderDto;
+import com.orderservice.service.domain.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,11 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
+
+    @GetMapping("{id}")
+    public ResponseEntity<Order> getOrder(@PathVariable Long id){
+        return ResponseEntity.ok(orderService.getOrder(id));
+    }
 
     @PostMapping
     public ResponseEntity<Long> placeOrder(@RequestHeader("user") String userId,

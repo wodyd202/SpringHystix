@@ -13,11 +13,10 @@ import static java.util.Arrays.asList;
 public class ProductController {
 
     @GetMapping
-    public List<Product> getProducts(){
-        throw new IllegalArgumentException();
-//        return asList(
-//                Product.of("상품명1", 10000, 100),
-//                Product.of("상품명2", 20000, 200)
-//            );
+    public List<Product> getProducts() throws Exception {
+        return asList(
+                Product.of("상품명1", 10000, 100),
+                Product.of("상품명2", 20000, 200)
+            );
     }
 }
